@@ -172,7 +172,7 @@ function Feed() {
                               {news.results.slice(0, 5).map((t) => (
                                 <div>
                                   {console.log("No Data in Trending")}
-                                  No Data in Trending
+                                  Loading Data in Trending...
                                   <Block
                                     data={t.results}
                                     img={
@@ -214,7 +214,7 @@ function Feed() {
                               {news.results.slice(5, 10).map((t) => (
                                 <div>
                                   {console.log("No Data in Trending")}
-                                  No Data in Trending
+                                  Loading Data in Trending...
                                   <Block
                                     data={t.results}
                                     img={
@@ -305,7 +305,7 @@ function Feed() {
                     {news.results.slice(0, 10).map((t) => (
                       <div>
                         {console.log("No Data in Sports")}
-                        No Data in sports
+                        Loading Data in sports...
                         <Card
                           data={t.results}
                           img={
@@ -361,7 +361,7 @@ function Feed() {
                     {news.results.slice(0, 10).map((t) => (
                       <div>
                         {console.log("No Data in finance")}
-                        No Data in finance
+                        Loading Data in finance...
                         <Card
                           data={t.results}
                           img={
@@ -385,7 +385,7 @@ function Feed() {
             {/* {console.log("news here : ", news.results)} */}
           </div>
         ) : (
-          <div>No Data</div>
+          <div>Loading...</div>
         )}
       </div>
     </div>
