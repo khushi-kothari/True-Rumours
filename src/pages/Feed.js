@@ -101,7 +101,7 @@ function Feed() {
                   </p>
                   <Link
                     to={"/detail"}
-                    state={news.results}
+                    state={news.results[0]}
                     className="text-white my-7 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
                     Read more
@@ -253,7 +253,11 @@ function Feed() {
                               ? t.multimedia[t.multimedia.length - 1].url
                               : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                           }
-                          title={t.title}
+                          title={
+                            t.hasOwnProperty("title")
+                              ? t.title
+                              : t.headline?.main
+                          }
                           desc={t.abstract}
                         />
                       </div>
@@ -286,7 +290,11 @@ function Feed() {
                           img={`https://static01.nyt.com/${
                             t.multimedia[t.multimedia.length - 1].url
                           }`}
-                          title={t.headline.print_headline}
+                          title={
+                            t.headline.hasOwnProperty("print_headline")
+                              ? t.headline.print_headline
+                              : t.headline?.main
+                          }
                           desc={t.abstract}
                         />
                       </div>
@@ -305,7 +313,11 @@ function Feed() {
                               ? t.multimedia[t.multimedia.length - 1].url
                               : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                           }
-                          title={t.title}
+                          title={
+                            t.hasOwnProperty("title")
+                              ? t.title
+                              : t.headline?.main
+                          }
                           desc={t.abstract}
                         />
                       </div>
@@ -338,7 +350,7 @@ function Feed() {
                           img={`https://static01.nyt.com/${
                             t.multimedia[t.multimedia.length - 1].url
                           }`}
-                          title={t.headline.print_headline}
+                          title={t.headline.main}
                           desc={t.abstract}
                         />
                       </div>
@@ -357,7 +369,11 @@ function Feed() {
                               ? t.multimedia[t.multimedia.length - 1].url
                               : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                           }
-                          title={t.title}
+                          title={
+                            t.hasOwnProperty("title")
+                              ? t.title
+                              : t.headline.main
+                          }
                           desc={t.abstract}
                         />
                       </div>
