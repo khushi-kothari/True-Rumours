@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaUserAlt } from "react-icons/fa";
-import { Link, matchPath, Outlet } from "react-router-dom";
+import { Link, matchPath, Outlet, useNavigate } from "react-router-dom";
 import logo from "../Images/logo.jpeg";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -25,13 +25,29 @@ const buttonData = [
   // Add more buttons for other categories if needed
 ];
 
-export function Navbar() {
+export function Navbar({ sendQueryToParent }) {
   // const match = matchPath({ path: "/users/:id" }, "/users/123");
   const { loginWithRedirect, user, logout, isAuthenticated } = useAuth0();
 
-  const [toggle, setToggle] = useState(false);
+  const [shouldRedirect, setShouldRedirect] = useState(false);
   const [profileCard, setProfileCard] = useState(false);
+  const [query, setQuery] = useState("");
   const timeoutRef = useRef(null);
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   return () => {
+  //     // sendQueryToParent(query);
+  //     console.log("query: ", query);
+  //   };
+  // }, [query]);
+
+  useEffect(() => {
+    if (shouldRedirect) {
+      navigate("/search", { state: { query } });
+      setShouldRedirect(false); // Set shouldRedirect to false after redirection
+    }
+  }, [shouldRedirect]);
 
   const handleMouseOver = () => {
     clearTimeout(timeoutRef.current); // Clear any existing timeout
@@ -45,9 +61,25 @@ export function Navbar() {
     }, 200);
   };
 
-  const handleToggle = () => {
-    // onClick Change query and pass the send the state to Home page (parent)
-    setToggle(!toggle);
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+    //console.log(e.target.value);
+  };
+
+  const debounce = (e) => {
+    let timer;
+    return () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {}, 300);
+    };
+  };
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      console.log("Enter on Search ", e.target.value);
+      setQuery(e.target.value);
+      setShouldRedirect(true);
+    }
   };
 
   return (
@@ -80,7 +112,10 @@ export function Navbar() {
 
               {/* Search */}
               <div className="max-w-2xl mx-auto">
-                <form className="flex items-center">
+                <form
+                  className="flex items-center"
+                  onSubmit={(e) => e.preventDefault()}
+                >
                   <label htmlFor="voice-search" className="sr-only">
                     Search
                   </label>
@@ -101,36 +136,14 @@ export function Navbar() {
                     </div>
                     <input
                       type="text"
-                      id="voice-search"
+                      id="search"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Search..."
+                      onKeyUp={handleEnter}
+                      onChange={handleChange}
                       required
                     />
-                    <button
-                      type="button"
-                      className="flex absolute inset-y-0 right-0 items-center pr-3"
-                    ></button>
                   </div>
-                  <button
-                    type="submit"
-                    className="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
-                    <svg
-                      className="mr-2 -ml-1 w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      ></path>
-                    </svg>
-                    Search
-                  </button>
                   <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
                 </form>
               </div>
@@ -219,8 +232,12 @@ export function Navbar() {
         {buttonData.map((button, index) => (
           <button
             key={index}
-            onClick={handleToggle}
-            className={`${toggle ? "active" : null} px-2`}
+            onClick={() => {
+              // setToggle(!toggle);
+              setQuery(button.label);
+              setShouldRedirect(true);
+            }}
+            className={`hover:text-gray-800 px-2`}
           >
             #{button.label}
           </button>
@@ -245,4 +262,27 @@ export function Navbar() {
                         >
                           Logout
                         </Link> */
+}
+
+{
+  /* <button
+                    type="submit"
+                    className="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    <svg
+                      className="mr-2 -ml-1 w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      ></path>
+                    </svg>
+                    Search
+                  </button> */
 }

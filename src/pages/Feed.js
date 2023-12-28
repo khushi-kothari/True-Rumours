@@ -10,9 +10,6 @@ import { Link } from "react-router-dom";
 import Block from "../components/Block";
 
 function Feed() {
-  // const location = useLocation();
-  // const news = location.state;
-  // console.log(news);
   const [news, setNews] = useState([]);
   const [isSActive, setS] = useState(false);
   const [isFActive, setF] = useState(false);
@@ -20,6 +17,8 @@ function Feed() {
   const [trending, setTrending] = useState([]);
   const [sports, setSports] = useState([]);
   const [finance, setFinance] = useState([]);
+  const [query, setQuery] = useState("");
+  // const [masonary, setMasonary] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,6 +60,11 @@ function Feed() {
     fetchData();
   }, []);
 
+  // useEffect(() => {
+  //  return () => {
+  //   }
+  // }, [query])
+
   const handleS = () => {
     setS(!isSActive);
     // console.log(sports);
@@ -75,10 +79,15 @@ function Feed() {
     setAd(false);
   };
 
+  // Let's see if this is necessary or not
+  const handleQuery = (data) => {
+    setQuery(data);
+  };
+
   return (
     <div className="mb-10 w-screen overflow-clip">
       <div className=" block">
-        <Navbar />
+        <Navbar sendQueryToParent={handleQuery} />
         {news.results ? (
           <div>
             <div>
@@ -127,14 +136,14 @@ function Feed() {
                       </h1>
                     </div>
 
-                    <div className="container -mt-20">
+                    <div className="container -mt-36">
                       {isAdActive ? (
                         // className="flex flex-col justify-center items-center"
                         <div>
                           <img
                             src="https://study.com/cimages/multimages/16/burgerad15179945781952220614.png"
                             alt="advertisement"
-                            className="rounded-sm w-full h-5/6 mt-24"
+                            className="rounded-sm w-full h-5/6 mt-44"
                           />
                           <button
                             className="mt-6 ml-40 bg-zinc-200 text- p-3 rounded-lg text-lg shadow-sm"
@@ -339,7 +348,7 @@ function Feed() {
                   isFActive ? " visible " : "hidden"
                 } grid grid-rows-1 grid-flow-col gap-4 overflow-scroll mx-12 `}
               >
-                {console.log("finance : ", finance)}
+                {/* {console.log("finance : ", finance)} */}
                 {finance.docs.length > 0 ? (
                   <>
                     {finance.docs.map((t) => (
@@ -385,7 +394,9 @@ function Feed() {
             {/* {console.log("news here : ", news.results)} */}
           </div>
         ) : (
-          <div>Loading...</div>
+          <div className="flex flex-col justify-center items-center font-semibold text-slate-700 my-10 text-xl">
+            Loading...
+          </div>
         )}
       </div>
     </div>
