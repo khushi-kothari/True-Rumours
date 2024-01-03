@@ -114,7 +114,7 @@ function Feed() {
                     <Link
                       to={"/detail"}
                       state={news.results[0]}
-                      className="text-white my-7 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="text-white my-7 bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-900"
                     >
                       Read more
                       <svg
@@ -140,7 +140,7 @@ function Feed() {
                 {/* Latest Section */}
 
                 <div>
-                  <h1 className="sticky text-3xl font-bold bg-white pb-10 mt-24 font-serif ml-12">
+                  <h1 className="sticky text-3xl font-bold bg-beige pb-10 mt-24 font-serif ml-12">
                     Latest
                   </h1>
                   <div className="grid grid-rows-1 grid-flow-col gap-4 overflow-scroll mx-12">
@@ -172,7 +172,7 @@ function Feed() {
 
                 {/* Ad Section */}
                 <div>
-                  <h1 className="sticky text-3xl font-bold bg-white pb-10 mt-16 font-serif mx-12">
+                  <h1 className="sticky text-3xl font-bold bg-beige pb-10 mt-16 font-serif mx-12">
                     Trending
                   </h1>
                   <div className="grid grid-cols-5 h-[100vh] gap-8 mx-12">
@@ -198,7 +198,7 @@ function Feed() {
                       <Link
                         to={"/detail"}
                         state={news.results[0]}
-                        className="text-white my-7 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        className="text-white my-7 bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-900"
                       >
                         Read more
                         <svg
@@ -217,8 +217,8 @@ function Feed() {
                     </div>
                     <div className="col-span-2 overflow-scroll">
                       <div className="grid grid-cols-1 grid-flow-row overflow-scroll">
-                        {/* <div className="bg-white">
-                        <h1 className="sticky text-3xl font-bold bg-white font-serif">
+                        {/* <div className="bg-beige">
+                        <h1 className="sticky text-3xl font-bold bg-beige font-serif">
                           Trending
                         </h1>
                       </div> */}
@@ -339,7 +339,7 @@ function Feed() {
                 </div>
                 {/* Entertainment List Section */}
                 <div className="mt-28">
-                  <h1 className="sticky text-3xl font-bold bg-white pb-8 mt-16 font-serif mx-12">
+                  <h1 className="sticky text-3xl font-bold bg-beige pb-8 mt-16 font-serif mx-12">
                     Entertainment
                   </h1>
                   <div className="mx-12">
@@ -352,7 +352,7 @@ function Feed() {
                 <div className="grid grid-cols-2 mt-8">
                   {/* Sports */}
                   <div>
-                    <h1 className="sticky text-3xl font-bold w-full bg-white my-10 font-serif mx-12">
+                    <h1 className="sticky text-3xl font-bold w-full bg-beige my-10 font-serif mx-12">
                       Sports{" "}
                       {/* <button>
                         <IoIosArrowDropdownCircle
@@ -415,7 +415,7 @@ function Feed() {
                   </div>
                   {/* Business */}
                   <div>
-                    <h1 className="sticky text-3xl font-bold w-full bg-white my-10 font-serif mx-12">
+                    <h1 className="sticky text-3xl font-bold w-full bg-beige my-10 font-serif mx-12">
                       Business{" "}
                       {/* <button>
                         <IoIosArrowDropdownCircle

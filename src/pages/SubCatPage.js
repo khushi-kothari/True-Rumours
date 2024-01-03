@@ -28,19 +28,21 @@ function SubCatPage() {
   return (
     <>
       <Navbar />
-      <h1 className="mx-44 mt-10 -mb-6 text-3xl font-bold text-slate-700">
-        {query}
-      </h1>
-      <ul>
-        {results && (
-          <>
-            {/* {console.log("inside conditional result: ", results)} */}
-            {results.map((r, i) => {
-              return <List data={r} key={i} />;
-            })}
-          </>
-        )}
-      </ul>
+      <div className="mx-44 ">
+        <h1 className="mt-10 mb-6 text-3xl font-bold text-slate-700">
+          {query}
+        </h1>
+        <ul>
+          {results && (
+            <>
+              {/* {console.log("inside conditional result: ", results)} */}
+              {results.map((r, i) => {
+                return <List data={r} key={i} />;
+              })}
+            </>
+          )}
+        </ul>
+      </div>
     </>
   );
 }

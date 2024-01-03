@@ -157,7 +157,10 @@ function NewsDetail(data) {
                   magnis dis parturient montes, nascetur ridiculus mus.
                 </span>
               </p>
-              <Link to="/subscription" className=" -mt-36 text-blue-600">
+              <Link
+                to="/subscription"
+                className=" -mt-36 text-gray-800 font-bold underline"
+              >
                 Read More...
               </Link>
             </div>

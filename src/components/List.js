@@ -18,7 +18,7 @@ function List(data) {
     <section className="text-gray-600 body-font">
       <div className="container">
         <div className="flex items-center py-4 sm:flex-row flex-col">
-          <div className="sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0">
+          <div className="sm:mr-10 inline-flex items-center justify-center text-gray-700 flex-shrink-0">
             <img src={img} alt="image" className="h-48 w-60" />
           </div>
           <div className="flex-grow sm:text-left mt-6 sm:mt-0">
@@ -33,7 +33,7 @@ function List(data) {
             <Link
               to={"/detail"}
               state={data.data}
-              className="mt-3 text-indigo-500 inline-flex items-center"
+              className="mt-3 text-gray-800 font-semibold underline inline-flex items-center"
               // className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Learn More

@@ -84,7 +84,7 @@ function Footer() {
                     class="w-full mr-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
 
-                  <button className="text-white my-7 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  <button className="text-white my-7 bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center  dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-900">
                     Button
                   </button>
                 </div>
@@ -98,7 +98,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div class="bg-gray-100">
+      <div class="bg-darkBeige">
         <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <svg
@@ -108,7 +108,7 @@ function Footer() {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              class="w-10 h-10 text-white p-2 bg-blue-600 rounded-full"
+              class="w-10 h-10 text-white p-2 bg-gray-800 rounded-full"
               viewBox="0 0 24 24"
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>

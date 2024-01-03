@@ -9,7 +9,7 @@ function Card({ ...props }) {
   // console.log("article : ", article);
   return (
     <div classNameName="max-w-2xl mx-auto">
-      <div className="bg-white shadow-md border border-gray-200 rounded-sm w-72 dark:bg-gray-800 dark:border-gray-700 h-96 mb-4">
+      <div className="bg-lightBeige shadow-md border border-gray-200 rounded-sm w-72 dark:bg-gray-800 dark:border-gray-700 h-96 mb-4">
         <a href="#">
           <img
             className="rounded-t-sm h-36 w-full overflow-hidden"
@@ -31,7 +31,7 @@ function Card({ ...props }) {
           <Link
             to={"/detail"}
             state={data}
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-900"
           >
             Read more
             <svg
