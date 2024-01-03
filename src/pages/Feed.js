@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import Block from "../components/Block";
 
 function Feed() {
+  // This was the original UI
   const [news, setNews] = useState([]);
   const [isSActive, setS] = useState(false);
   const [isFActive, setF] = useState(false);
