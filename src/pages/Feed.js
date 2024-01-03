@@ -94,8 +94,8 @@ function Feed() {
             <div>
               <div>
                 {/* Hero Section */}
-                <div className="grid grid-cols-5 h-screen mt-10 gap-0 mx-12">
-                  <div className="col-span-3 bg-blue-300 h-fit">
+                <div className="grid grid-cols-5 h-screen mt-10 gap-6 mx-12">
+                  <div className="col-span-3 h-fit">
                     <img
                       className=" w-full brightness-50 rounded-sm"
                       src={
@@ -131,21 +131,21 @@ function Feed() {
                       </svg>
                     </Link>
                   </div>
-                  <div className=" bg-pink-400 h-fit">
-                    <List data={sports?.docs[4]} />
-                    {/* <List data={sports?.docs[5]} />
-                    <List data={sports?.docs[6]} /> */}
+                  <div className="h-fit w-[35vw] mr-12 ">
+                    <List data={sports?.docs[5]} />
+                    <List data={sports?.docs[6]} />
+                    {/* <List data={sports?.docs[7]} /> */}
                   </div>
                 </div>
                 {/* Latest Section */}
                 <div>
-                  <h1 className="sticky text-3xl font-bold bg-white pb-10 mt-24 font-serif mx-12">
+                  <h1 className="sticky text-3xl font-bold bg-white pb-10 mt-24 font-serif ml-12">
                     Latest
                   </h1>
                   <div className="grid grid-rows-1 grid-flow-col gap-4 overflow-scroll mx-12">
                     {
                       <>
-                        {news.results.slice(1, 11).map((t) => (
+                        {news.results.slice(3, 14).map((t) => (
                           <div>
                             {/* {console.log("latest from maps : ", t)} */}
                             <Card
@@ -169,182 +169,195 @@ function Feed() {
                   </div>
                 </div>
                 {/* Ad Section */}
-                <div className="grid grid-cols-5 h-screen mt-10 gap-8 mx-12">
-                  <div className="col-span-3">
-                    <img
-                      className=" w-full brightness-50 rounded-sm"
-                      src={
-                        news.results[0]["multimedia"].length > 0
-                          ? news.results[0]?.["multimedia"][2].url
-                          : "https://images.unsplash.com/photo-1517732306149-e8f829eb588a?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      }
-                      alt={""}
-                    />{" "}
-                    <h1 className="my-6 text-4xl font-semibold">
-                      {news.results[0].title}
-                    </h1>
-                    <p className="text-xl text-gray-600">
-                      {news.results[0].abstract}
-                    </p>
-                    <Link
-                      to={"/detail"}
-                      state={news.results[0]}
-                      className="text-white my-7 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    >
-                      Read more
-                      <svg
-                        className="-mr-1 ml-2 h-4 w-4"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
+                <div>
+                  <h1 className="sticky text-3xl font-bold bg-white pb-10 mt-24 font-serif mx-12">
+                    Trending
+                  </h1>
+                  <div className="grid grid-cols-5 h-[100vh] gap-8 mx-12">
+                    <div className="col-span-3">
+                      <img
+                        className=" w-full brightness-50 rounded-sm"
+                        src={
+                          trending[0].media[0]?.["media-metadata"].length > 0
+                            ? trending[0].media[0]?.["media-metadata"]?.[
+                                trending[0].media[0]?.["media-metadata"]
+                                  .length - 1
+                              ].url
+                            : "https://images.unsplash.com/photo-1517732306149-e8f829eb588a?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        }
+                        alt={""}
+                      />{" "}
+                      <h1 className="my-6 text-4xl font-semibold">
+                        {news.results[0].title}
+                      </h1>
+                      <p className="text-xl text-gray-600">
+                        {news.results[0].abstract}
+                      </p>
+                      <Link
+                        to={"/detail"}
+                        state={news.results[0]}
+                        className="text-white my-7 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       >
-                        <path
-                          fill-rule="evenodd"
-                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </Link>
-                  </div>
-                  <div className="col-span-2 overflow-scroll">
-                    <div className="grid grid-cols-1 grid-flow-row overflow-scroll">
-                      <div className="bg-white">
+                        Read more
+                        <svg
+                          className="-mr-1 ml-2 h-4 w-4"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </Link>
+                    </div>
+                    <div className="col-span-2 overflow-scroll">
+                      <div className="grid grid-cols-1 grid-flow-row overflow-scroll">
+                        {/* <div className="bg-white">
                         <h1 className="sticky text-3xl font-bold bg-white font-serif">
                           Trending
                         </h1>
-                      </div>
+                      </div> */}
 
-                      <div className="container -mt-36">
-                        {isAdActive ? (
-                          // className="flex flex-col justify-center items-center"
-                          <div>
-                            <img
-                              src="https://study.com/cimages/multimages/16/burgerad15179945781952220614.png"
-                              alt="advertisement"
-                              className="rounded-sm w-full h-5/6 mt-44"
-                            />
-                            <button
-                              className="mt-6 ml-40 bg-zinc-200 text- p-3 rounded-lg text-lg shadow-sm"
-                              onClick={handleAd}
-                            >
-                              <GrClose className="inline mr-1" /> Remove Ads
-                            </button>{" "}
-                          </div>
-                        ) : (
-                          <div className="grid grid-cols-2 grid-flow-row gap-6 overflow-scroll mt-48 mb-20">
-                            {/* {console.log("Trending state : ", trending)} */}
-                            {trending.length > 0 ? (
-                              <div>
-                                {trending.slice(0, 5).map((t) => (
-                                  <div>
-                                    {/* {console.log("Trending side-bar from maps : ", t)} */}
-                                    <Block
-                                      data={t}
-                                      img={
-                                        t.media[0]?.["media-metadata"].length >
-                                        0
-                                          ? t.media[0]?.["media-metadata"]?.[
-                                              t.media[0]?.["media-metadata"]
-                                                .length - 1
-                                            ].url
-                                          : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                      }
-                                      title={t.title}
-                                      desc={t.abstract}
-                                    />
-                                  </div>
-                                ))}
-                              </div>
-                            ) : (
-                              <div>
-                                {news.results.slice(0, 5).map((t) => (
-                                  <div>
-                                    {console.log("No Data in Trending")}
-                                    Loading Data in Trending...
-                                    <Block
-                                      data={t.results}
-                                      img={
-                                        t.multimedia?.length > 0
-                                          ? t.multimedia[
-                                              t.multimedia.length - 1
-                                            ].url
-                                          : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                      }
-                                      title={t.title}
-                                      desc={t.abstract}
-                                    />
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                            {trending.length > 0 ? (
-                              <div className="">
-                                {trending.slice(5, 10).map((t) => (
-                                  <div>
-                                    {/* {console.log("Trending side-bar from maps : ", t)} */}
-                                    <Block
-                                      data={t}
-                                      img={
-                                        t.media[0]?.["media-metadata"].length >
-                                        0
-                                          ? t.media[0]?.["media-metadata"]?.[
-                                              t.media[0]?.["media-metadata"]
-                                                .length - 1
-                                            ].url
-                                          : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                      }
-                                      title={t.title}
-                                      desc={t.abstract}
-                                    />
-                                  </div>
-                                ))}
-                              </div>
-                            ) : (
-                              <div>
-                                {news.results.slice(5, 10).map((t) => (
-                                  <div>
-                                    {console.log("No Data in Trending")}
-                                    Loading Data in Trending...
-                                    <Block
-                                      data={t.results}
-                                      img={
-                                        t.multimedia?.length > 0
-                                          ? t.multimedia[
-                                              t.multimedia.length - 1
-                                            ].url
-                                          : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                      }
-                                      title={t.title}
-                                      desc={t.abstract}
-                                    />
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        )}
+                        <div className="container">
+                          {isAdActive ? (
+                            // className="flex flex-col justify-center items-center"
+                            <div>
+                              <img
+                                src="https://study.com/cimages/multimages/16/burgerad15179945781952220614.png"
+                                alt="advertisement"
+                                className="rounded-sm w-full h-5/6"
+                              />
+                              <button
+                                className="mt-6 ml-40 bg-zinc-200 text- p-3 rounded-lg text-lg shadow-sm"
+                                onClick={handleAd}
+                              >
+                                <GrClose className="inline mr-1" /> Remove Ads
+                              </button>{" "}
+                            </div>
+                          ) : (
+                            <div className="grid grid-cols-2 grid-flow-row gap-6 overflow-scroll mb-20">
+                              {/* {console.log("Trending state : ", trending)} */}
+                              {trending.length > 0 ? (
+                                <div>
+                                  {trending.slice(0, 5).map((t) => (
+                                    <div>
+                                      {/* {console.log("Trending side-bar from maps : ", t)} */}
+                                      <Block
+                                        data={t}
+                                        img={
+                                          t.media[1]?.["media-metadata"]
+                                            .length > 0
+                                            ? t.media[1]?.["media-metadata"]?.[
+                                                t.media[1]?.["media-metadata"]
+                                                  .length - 1
+                                              ].url
+                                            : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        }
+                                        title={t.title}
+                                        desc={t.abstract}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : (
+                                <div>
+                                  {news.results.slice(1, 5).map((t) => (
+                                    <div>
+                                      {console.log("No Data in Trending")}
+                                      Loading Data in Trending...
+                                      <Block
+                                        data={t.results}
+                                        img={
+                                          t.multimedia?.length > 0
+                                            ? t.multimedia[
+                                                t.multimedia.length - 1
+                                              ].url
+                                            : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        }
+                                        title={t.title}
+                                        desc={t.abstract}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                              {trending.length > 0 ? (
+                                <div className="">
+                                  {trending.slice(5, 10).map((t) => (
+                                    <div>
+                                      {/* {console.log("Trending side-bar from maps : ", t)} */}
+                                      <Block
+                                        data={t}
+                                        img={
+                                          t.media[0]?.["media-metadata"]
+                                            .length > 0
+                                            ? t.media[0]?.["media-metadata"]?.[
+                                                t.media[0]?.["media-metadata"]
+                                                  .length - 1
+                                              ].url
+                                            : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        }
+                                        title={t.title}
+                                        desc={t.abstract}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : (
+                                <div>
+                                  {news.results.slice(5, 10).map((t) => (
+                                    <div>
+                                      {console.log("No Data in Trending")}
+                                      Loading Data in Trending...
+                                      <Block
+                                        data={t.results}
+                                        img={
+                                          t.multimedia?.length > 0
+                                            ? t.multimedia[
+                                                t.multimedia.length - 1
+                                              ].url
+                                            : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        }
+                                        title={t.title}
+                                        desc={t.abstract}
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                {/* List Section */}
-                <div>
-                  <List data={sports?.docs[4]} />
-                  <List data={sports?.docs[5]} />
-                  <List data={sports?.docs[6]} />
+                {/* Entertainment List Section */}
+                <div className="mt-32">
+                  <h1 className="sticky text-3xl font-bold bg-white pb-2 mt-24 font-serif mx-12">
+                    Entertainment
+                  </h1>
+                  <div className="mx-12">
+                    <List data={sports?.docs[4]} />
+                    <List data={sports?.docs[5]} />
+                    <List data={sports?.docs[6]} />
+                  </div>
                 </div>
                 {/* Sports - Business Section */}
-                <div className="grid grid-cols-2 ">
+                <div className="grid grid-cols-2 mt-4">
                   {/* Sports */}
                   <div>
                     <h1 className="sticky text-3xl font-bold w-full bg-white my-10 font-serif mx-12">
                       Sports{" "}
-                      <button>
+                      {/* <button>
                         <IoIosArrowDropdownCircle
                           className="inline"
                           onClick={handleS}
                         />
-                      </button>
+                      </button> */}
                     </h1>
                     <div
                       className={`${
@@ -402,12 +415,12 @@ function Feed() {
                   <div>
                     <h1 className="sticky text-3xl font-bold w-full bg-white my-10 font-serif mx-12">
                       Business{" "}
-                      <button>
+                      {/* <button>
                         <IoIosArrowDropdownCircle
                           className="inline"
                           onClick={handleF}
                         />
-                      </button>
+                      </button> */}
                     </h1>
                     <div
                       className={`${

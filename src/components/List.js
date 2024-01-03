@@ -16,8 +16,8 @@ function List(data) {
   // console.log("from list : ", title, abstract, multimedia, img, url);
   return (
     <section className="text-gray-600 body-font">
-      <div className="container mx-12">
-        <div className="flex items-center border-b py-16 border-gray-200 sm:flex-row flex-col">
+      <div className="container">
+        <div className="flex items-center border-b py-8 border-gray-200 sm:flex-row flex-col">
           <div className="sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0">
             <img src={img} alt="image" className="h-48 w-60" />
           </div>
