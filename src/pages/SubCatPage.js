@@ -33,13 +33,17 @@ function SubCatPage() {
           {query}
         </h1>
         <ul>
-          {results && (
+          {results ? (
             <>
               {/* {console.log("inside conditional result: ", results)} */}
               {results.map((r, i) => {
                 return <List data={r} key={i} />;
               })}
             </>
+          ) : (
+            <div className="flex flex-col justify-center items-center font-semibold text-slate-700 my-10 text-xl">
+              Loading...
+            </div>
           )}
         </ul>
       </div>

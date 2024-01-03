@@ -9,7 +9,7 @@ function Block({ ...props }) {
   // console.log("article : ", article);
   return (
     <div class="max-w-2xl mx-auto">
-      <div class="mb-4 border-2 border-gray-100">
+      <div class="mb-4 shadow-lg">
         <a href="#">
           <img
             class="rounded-t-sm h-36 w-full overflow-hidden"
@@ -31,7 +31,7 @@ function Block({ ...props }) {
           <Link
             to={"/detail"}
             state={data}
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            class="text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-900"
           >
             Read more
             <svg

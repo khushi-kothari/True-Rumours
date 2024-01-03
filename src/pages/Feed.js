@@ -240,7 +240,7 @@ function Feed() {
                               </button>{" "}
                             </div>
                           ) : (
-                            <div className="grid grid-cols-2 grid-flow-row gap-6 overflow-scroll mb-20">
+                            <div className="grid grid-cols-2 grid-flow-row gap-6 overflow-scroll mb-20 px-1">
                               {/* {console.log("Trending state : ", trending)} */}
                               {trending.length > 0 ? (
                                 <div>
