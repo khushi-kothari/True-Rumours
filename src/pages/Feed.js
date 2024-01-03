@@ -94,7 +94,7 @@ function Feed() {
             <div>
               <div>
                 {/* Hero Section */}
-                <div className="grid grid-cols-5 h-screen mt-10 gap-6 mx-12">
+                <div className="grid grid-cols-5 h-screen mt-12 gap-6 mx-12">
                   <div className="col-span-3 h-fit">
                     <img
                       className=" w-full brightness-50 rounded-sm"
@@ -138,6 +138,7 @@ function Feed() {
                   </div>
                 </div>
                 {/* Latest Section */}
+
                 <div>
                   <h1 className="sticky text-3xl font-bold bg-white pb-10 mt-24 font-serif ml-12">
                     Latest
@@ -168,9 +169,10 @@ function Feed() {
                     }
                   </div>
                 </div>
+
                 {/* Ad Section */}
                 <div>
-                  <h1 className="sticky text-3xl font-bold bg-white pb-10 mt-24 font-serif mx-12">
+                  <h1 className="sticky text-3xl font-bold bg-white pb-10 mt-16 font-serif mx-12">
                     Trending
                   </h1>
                   <div className="grid grid-cols-5 h-[100vh] gap-8 mx-12">
@@ -336,8 +338,8 @@ function Feed() {
                   </div>
                 </div>
                 {/* Entertainment List Section */}
-                <div className="mt-32">
-                  <h1 className="sticky text-3xl font-bold bg-white pb-2 mt-24 font-serif mx-12">
+                <div className="mt-28">
+                  <h1 className="sticky text-3xl font-bold bg-white pb-8 mt-16 font-serif mx-12">
                     Entertainment
                   </h1>
                   <div className="mx-12">
@@ -347,7 +349,7 @@ function Feed() {
                   </div>
                 </div>
                 {/* Sports - Business Section */}
-                <div className="grid grid-cols-2 mt-4">
+                <div className="grid grid-cols-2 mt-8">
                   {/* Sports */}
                   <div>
                     <h1 className="sticky text-3xl font-bold w-full bg-white my-10 font-serif mx-12">
