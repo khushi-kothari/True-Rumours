@@ -16,10 +16,10 @@ function List(data) {
   // console.log("from list : ", title, abstract, multimedia, img, url);
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5 mx-auto">
-        <div className="flex items-center lg:w-4/5 mx-20 border-b py-16 border-gray-200 sm:flex-row flex-col">
-          <div className="sm:w-32 sm:h-32 w-48 sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0">
-            <img src={img} alt="image" className="h-32 w-48" />
+      <div className="container">
+        <div className="flex items-center py-4 sm:flex-row flex-col">
+          <div className="sm:mr-10 inline-flex items-center justify-center text-indigo-500 flex-shrink-0">
+            <img src={img} alt="image" className="h-48 w-60" />
           </div>
           <div className="flex-grow sm:text-left mt-6 sm:mt-0">
             <h2 className="text-gray-900 text-lg title-font font-medium mb-2">
