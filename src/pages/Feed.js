@@ -233,10 +233,11 @@ function Feed() {
                                 className="rounded-sm w-full h-5/6"
                               />
                               <button
-                                className="mt-6 ml-40 bg-zinc-200 text- p-3 rounded-lg text-lg shadow-sm"
+                                className="mt-6 ml-40 bg-zinc-200 p-3 rounded-lg text-lg shadow-sm text-gray-800 font-semibold hover:text-black hover:text-xl"
                                 onClick={handleAd}
                               >
-                                <GrClose className="inline mr-1" /> Remove Ads
+                                <GrClose className="inline mr-1 font-bold" />{" "}
+                                Remove Ads
                               </button>{" "}
                             </div>
                           ) : (
