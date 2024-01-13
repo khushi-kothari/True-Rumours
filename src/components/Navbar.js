@@ -97,9 +97,9 @@ export function Navbar({ sendQueryToParent }) {
           <div className=" mx-4 px-2 sm:px-4 lg:px-8">
             {/* main navbar */}
             <div className="relative flex items-center justify-between h-16">
-              <Link className="flex flex-row mr-32" to="/#top">
-                <img className="h-10 mr-3" src={logo} alt="Logo" />
-                <h1 className="font-bold text-3xl text-gray-800 font-serif ">
+              <Link className="flex flex-row mr-2" to="/#top">
+                <img className="h-10 mr-4" src={logo} alt="Logo" />
+                <h1 className="font-bold hidden justify-center items-center md:flex md:text-xl lg:text-3xl text-gray-800 font-serif ">
                   TrueRumours
                 </h1>
               </Link>
@@ -111,7 +111,7 @@ export function Navbar({ sendQueryToParent }) {
               />
 
               {/* Search */}
-              <div className="max-w-2xl mx-auto">
+              <div className="max-w-2xl mx-auto hidden sm:flex">
                 <form
                   className="flex items-center"
                   onSubmit={(e) => e.preventDefault()}
@@ -148,87 +148,90 @@ export function Navbar({ sendQueryToParent }) {
                 </form>
               </div>
 
-              {/* Subscribe */}
-              <Link
-                to="/subscription"
-                className="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-bold text-gray-800 rounded-lg border-2 border-gray-800 hover:bg-gray-800 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300  dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-800"
-              >
-                Subscribe Now
-              </Link>
-
-              {/* Login / Logout */}
-              {isAuthenticated ? (
-                <>
-                  <img
-                    className="rounded-full w-10 mx-4 hover:cursor-pointer"
-                    src={user.picture}
-                    alt={user.name}
-                    onClick={() => {
-                      setProfileCard(true); //make this to setProfileCard(!profileCard) once you redirect
-                    }} //Redirect to User Profile
-                    onMouseOver={handleMouseOver}
-                  />
-                  {profileCard && (
-                    <>
-                      <div
-                        onMouseLeave={handleMouseLeave}
-                        className="absolute top-20 -right-6 bg-lightBeige py-6 px-8 w-[300px] rounded-lg shadow-md opacity-[1] z-40"
-                      >
-                        <div className=" flex flex-col justify-center items-center">
-                          <img
-                            className="rounded-full w-20 mx-4 hover:cursor-pointer"
-                            src={user.picture}
-                            alt={user.name}
-                          />
-                          <h1 className="mt-3 mb-6 font-semibold text-gray-800 hover:cursor-pointer">
-                            {user.name}
-                          </h1>
-                        </div>
-                        <ul className=" text-gray-500">
-                          <li className="mb-3 hover:text-gray-800 hover:cursor-pointer">
-                            Subscription
-                          </li>
-                          <li className="mb-3 hover:text-gray-800 hover:cursor-pointer">
-                            Collections
-                          </li>
-                          <li className="mb-3 hover:text-gray-800 hover:cursor-pointer">
-                            Settings
-                          </li>
-                          <hr className="my-4" />
-                          <li
-                            className="hover:text-gray-800 hover:cursor-pointer"
-                            onClick={() =>
-                              logout({
-                                logoutParams: {
-                                  returnTo: window.location.origin,
-                                },
-                              })
-                            }
-                          >
-                            Signout
-                          </li>
-                        </ul>
-                      </div>
-                    </>
-                  )}
-                </>
-              ) : (
+              {/* Subscribe & Login */}
+              <div className="flex ">
+                {/* Subscribe */}
                 <Link
-                  // to="/login"
-                  onClick={() => loginWithRedirect()}
-                  className="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-gray-800 rounded-lg border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-800"
+                  to="/subscription"
+                  className="inline-flex items-center py-1.5 px-1.5 ml-2 text-sm font-bold text-gray-800 rounded-lg border-2 border-gray-800 hover:bg-gray-800 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300  dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-800"
                 >
-                  <FaUserAlt className="mx-2" />
-                  Login
+                  Subscribe
                 </Link>
-              )}
+
+                {/* Login / Logout */}
+                {isAuthenticated ? (
+                  <>
+                    <img
+                      className="rounded-full w-10 mx-4 hover:cursor-pointer"
+                      src={user.picture}
+                      alt={user.name}
+                      onClick={() => {
+                        setProfileCard(true); //make this to setProfileCard(!profileCard) once you redirect
+                      }} //Redirect to User Profile
+                      onMouseOver={handleMouseOver}
+                    />
+                    {profileCard && (
+                      <>
+                        <div
+                          onMouseLeave={handleMouseLeave}
+                          className="absolute top-20 -right-6 bg-lightBeige py-6 px-8 w-[300px] rounded-lg shadow-md opacity-[1] z-40"
+                        >
+                          <div className=" flex flex-col justify-center items-center">
+                            <img
+                              className="rounded-full w-20 mx-4 hover:cursor-pointer"
+                              src={user.picture}
+                              alt={user.name}
+                            />
+                            <h1 className="mt-3 mb-6 font-semibold text-gray-800 hover:cursor-pointer">
+                              {user.name}
+                            </h1>
+                          </div>
+                          <ul className=" text-gray-500">
+                            <li className="mb-3 hover:text-gray-800 hover:cursor-pointer">
+                              Subscription
+                            </li>
+                            <li className="mb-3 hover:text-gray-800 hover:cursor-pointer">
+                              Collections
+                            </li>
+                            <li className="mb-3 hover:text-gray-800 hover:cursor-pointer">
+                              Settings
+                            </li>
+                            <hr className="my-4" />
+                            <li
+                              className="hover:text-gray-800 hover:cursor-pointer"
+                              onClick={() =>
+                                logout({
+                                  logoutParams: {
+                                    returnTo: window.location.origin,
+                                  },
+                                })
+                              }
+                            >
+                              Signout
+                            </li>
+                          </ul>
+                        </div>
+                      </>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    // to="/login"
+                    onClick={() => loginWithRedirect()}
+                    className="inline-flex items-center py-1.5 px-2 ml-2 text-sm font-medium text-white bg-gray-800 rounded-lg border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-800"
+                  >
+                    <FaUserAlt className="mr-2" />
+                    Login
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Sub Navbar */}
-      <div className=" text-center mt-3 -ml-4 text-sm text-gray-500 ">
+      <div className=" text-center mt-3 mx-3 text-sm text-gray-500 ">
         {buttonData.map((button, index) => (
           <button
             key={index}

@@ -4,8 +4,8 @@ function Footer() {
   return (
     <footer class="text-gray-600 body-font">
       <div class="container px-5 py-24">
-        <div class="flex flex-row md:text-left text-center order-first">
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 grid-flow-row lg:grid-flow-col gap-4 md:text-left text-center order-first">
+          <div class="w-full col-span-2 md:col-span-1 px-4">
             <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
               CATEGORIES
             </h2>
@@ -26,26 +26,7 @@ function Footer() {
               </li>
             </nav>
           </div>
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">Games & Events</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">Investments</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">Small Business</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">Teens</a>
-              </li>
-            </nav>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <div class="w-full col-span-2 md:col-span-1 px-4">
             <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
               CATEGORIES
             </h2>
@@ -64,7 +45,26 @@ function Footer() {
               </li>
             </nav>
           </div>
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <div class="w-full col-span-2 md:col-span-1 px-4">
+            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+              CATEGORIES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Games & Events</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Investments</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Small Business</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Teens</a>
+              </li>
+            </nav>
+          </div>
+          <div class="w-full col-span-2 md:col-span-2 px-4">
             <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
               SUBSCRIBE
             </h2>
@@ -85,7 +85,7 @@ function Footer() {
                   />
 
                   <button className="text-white my-7 bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center  dark:bg-gray-800 dark:hover:bg-gray-800 dark:focus:ring-gray-900">
-                    Button
+                    Subscribe
                   </button>
                 </div>
               </div>
