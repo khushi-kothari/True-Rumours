@@ -131,7 +131,7 @@ function Feed() {
                       </svg>
                     </Link>
                   </div>
-                  <div className="h-fit w-[35vw] mr-12 hidden lg:flex lg:flex-col xl:hidden">
+                  <div className="card-container h-fit w-[35vw] mr-12 ">
                     <Card
                       data={sports?.docs[5]}
                       img={`https://static01.nyt.com/${
@@ -166,7 +166,7 @@ function Feed() {
                     />
                   </div>
 
-                  <div className="h-fit w-[35vw] mr-12 hidden xl:flex">
+                  <div className="list-container h-fit w-[35vw] mr-12">
                     <List data={sports?.docs[5]} />
                     <List data={sports?.docs[6]} />
                   </div>
@@ -210,7 +210,7 @@ function Feed() {
                     Trending
                   </h1>
                   <div className="grid grid-cols-5 h-[100vh] gap-8 mx-12">
-                    <div className="col-span-3">
+                    <div className="col-span-5 md:col-span-3">
                       <img
                         className=" w-full brightness-50 rounded-sm"
                         src={
@@ -249,7 +249,7 @@ function Feed() {
                         </svg>
                       </Link>
                     </div>
-                    <div className="col-span-2 overflow-scroll">
+                    <div className="col-span-5 md:col-span-2 overflow-scroll">
                       <div className="grid grid-cols-1 grid-flow-row overflow-scroll">
                         {/* <div className="bg-beige">
                         <h1 className="sticky text-3xl font-bold bg-beige font-serif">
@@ -275,7 +275,7 @@ function Feed() {
                               </button>{" "}
                             </div>
                           ) : (
-                            <div className="grid grid-cols-2 grid-flow-row gap-6 overflow-scroll mb-20 px-1">
+                            <div className="grid grid-rows-1 grid-flow-col md:grid-cols-1 md:grid-flow-row lg:grid-cols-2 gap-6 overflow-scroll mb-20 px-1">
                               {/* {console.log("Trending state : ", trending)} */}
                               {trending.length > 0 ? (
                                 <div>

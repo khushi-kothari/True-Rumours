@@ -25,3 +25,31 @@ code {
 .h-60vh {
   height: 60vh;
 }
+
+/* Assuming your default styles for both components are set in the CSS */
+.list-container,
+.card-container {
+  display: none;
+}
+
+/* Styles for screens 1024px to 1439px (lg breakpoint) */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .list-container {
+    display: none; /* Hide by default */
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Styles for screens 1440px and larger (xl breakpoint) */
+@media screen and (min-width: 1440px) {
+  .list-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-container {
+    display: none; /* Hide by default */
+  }
+}
