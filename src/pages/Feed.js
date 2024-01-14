@@ -95,7 +95,7 @@ function Feed() {
               <div>
                 {/* Hero Section */}
                 <div className="grid grid-cols-5 h-screen mt-12 gap-6 mx-12">
-                  <div className="col-span-3 h-fit">
+                  <div className="col-span-5 lg:col-span-3 h-fit">
                     <img
                       className=" w-full brightness-50 rounded-sm"
                       src={
@@ -131,10 +131,44 @@ function Feed() {
                       </svg>
                     </Link>
                   </div>
-                  <div className="h-fit w-[35vw] mr-12 ">
+                  <div className="h-fit w-[35vw] mr-12 hidden lg:flex lg:flex-col xl:hidden">
+                    <Card
+                      data={sports?.docs[5]}
+                      img={`https://static01.nyt.com/${
+                        sports?.docs[5].multimedia[
+                          sports?.docs[5].multimedia.length - 1
+                        ].url
+                      }`}
+                      title={
+                        sports?.docs[5].headline.hasOwnProperty(
+                          "print_headline"
+                        )
+                          ? sports?.docs[5].headline.print_headline
+                          : sports?.docs[5].headline?.main
+                      }
+                      desc={sports?.docs[5].abstract}
+                    />
+                    <Card
+                      data={sports?.docs[6]}
+                      img={`https://static01.nyt.com/${
+                        sports?.docs[6].multimedia[
+                          sports?.docs[6].multimedia.length - 1
+                        ].url
+                      }`}
+                      title={
+                        sports?.docs[6].headline.hasOwnProperty(
+                          "print_headline"
+                        )
+                          ? sports?.docs[6].headline.print_headline
+                          : sports?.docs[6].headline?.main
+                      }
+                      desc={sports?.docs[6].abstract}
+                    />
+                  </div>
+
+                  <div className="h-fit w-[35vw] mr-12 hidden xl:flex">
                     <List data={sports?.docs[5]} />
                     <List data={sports?.docs[6]} />
-                    {/* <List data={sports?.docs[7]} /> */}
                   </div>
                 </div>
                 {/* Latest Section */}
