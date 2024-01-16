@@ -96,8 +96,9 @@ function Feed() {
                 {/* Hero Section */}
                 <div className="hero-container grid grid-cols-5 h-screen mt-12 gap-6 mx-12">
                   <div className="col-span-5 lg:col-span-3">
+                    {/* w-full */}
                     <img
-                      className=" w-full brightness-50 rounded-sm"
+                      className=" h-[40vh] md:h-[70vh] w-full brightness-50 rounded-sm"
                       src={
                         news.results[0]["multimedia"].length > 0
                           ? news.results[0]?.["multimedia"][2].url
@@ -173,6 +174,7 @@ function Feed() {
                     {/* <List className="" data={sports?.docs[9]} /> */}
                   </div>
                 </div>
+
                 {/* Latest Section */}
                 <div className="mt-12">
                   <h1 className="sticky text-3xl font-bold bg-beige pb-10 font-serif ml-12">
@@ -383,7 +385,7 @@ function Feed() {
                 </div>
 
                 {/* Sports - Business Section */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 mt-8 mx-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 mt-8 mx-12 gap-0 2xl:gap-24">
                   {/* Sports */}
                   <div>
                     <h1 className="sticky text-3xl font-bold w-full bg-beige my-10 font-serif">

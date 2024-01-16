@@ -75,8 +75,8 @@ function NewsDetail(data) {
                 </div>
               </div>
             </div>
-            <div className="para-container flex flex-col justify-center items-center ">
-              <p className="m-8 mb-44 md:m-44 mt-0 md:mt-[35vh] xl:mt-[40vh] text-justify h-screen overflow-clip">
+            <div className="para-container m-8 mb-44 lg:m-44 -mt-4 md:mt-[36vh] lg:mt-[35vh] xl:mt-[40vh] flex flex-col justify-center items-center ">
+              <p className="text-justify h-screen xl:h-fit overflow-clip">
                 {article.content}
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                 feugiat luctus ex, sit amet tincidunt purus semper et. Morbi in
@@ -162,7 +162,7 @@ function NewsDetail(data) {
               </p>
               <Link
                 to="/subscription"
-                className=" -mt-36 text-gray-800 font-bold underline"
+                className=" mt-10 text-gray-800 font-bold underline"
               >
                 Read More...
               </Link>
