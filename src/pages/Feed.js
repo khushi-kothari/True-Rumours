@@ -176,7 +176,7 @@ function Feed() {
                 </div>
 
                 {/* Latest Section */}
-                <div className="mt-2 md:mt-12">
+                <div className="mt-2 md:mt-14">
                   <h1 className="sticky text-3xl font-bold bg-beige pb-10 font-serif ml-12">
                     Latest
                   </h1>
