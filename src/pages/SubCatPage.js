@@ -28,8 +28,8 @@ function SubCatPage() {
   return (
     <>
       <Navbar />
-      <div className="mx-44 ">
-        <h1 className="mt-10 mb-6 text-3xl font-bold text-slate-700">
+      <div className="mx-20 lg:mx-44 ">
+        <h1 className="my-10 text-3xl lg:my-16 lg:text-4xl text-center font-bold text-slate-700">
           {query}
         </h1>
         <ul>

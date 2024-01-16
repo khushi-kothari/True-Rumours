@@ -188,14 +188,10 @@ export function Navbar({ sendQueryToParent }) {
                           </div>
                           <ul className=" text-gray-500">
                             <li className="mb-3 hover:text-gray-800 hover:cursor-pointer">
-                              Subscription
+                              <Link to="/subscription">Subscription</Link>
                             </li>
-                            <li className="mb-3 hover:text-gray-800 hover:cursor-pointer">
-                              Collections
-                            </li>
-                            <li className="mb-3 hover:text-gray-800 hover:cursor-pointer">
-                              Settings
-                            </li>
+                            <li className="mb-3 text-gray-400">Collections</li>
+                            <li className="mb-3 text-gray-400">Settings</li>
                             <hr className="my-4" />
                             <li
                               className="hover:text-gray-800 hover:cursor-pointer"
