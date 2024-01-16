@@ -94,8 +94,8 @@ function Feed() {
             <div>
               <div>
                 {/* Hero Section */}
-                <div className="grid grid-cols-5 h-screen mt-12 gap-6 mx-12">
-                  <div className="col-span-5 lg:col-span-3 h-fit">
+                <div className="hero-container grid grid-cols-5 h-screen mt-12 gap-6 mx-12">
+                  <div className="col-span-5 lg:col-span-3">
                     <img
                       className=" w-full brightness-50 rounded-sm"
                       src={
@@ -131,8 +131,10 @@ function Feed() {
                       </svg>
                     </Link>
                   </div>
-                  <div className="card-container h-fit w-[35vw] mr-12 ">
+                  {/* flex flex-row xl:flex-col lg:col-span-2 col-span-5  */}
+                  <div className="card-container mr-12 w-[35vw]">
                     <Card
+                      className="s"
                       data={sports?.docs[5]}
                       img={`https://static01.nyt.com/${
                         sports?.docs[5].multimedia[
@@ -165,16 +167,15 @@ function Feed() {
                       desc={sports?.docs[6].abstract}
                     />
                   </div>
-
-                  <div className="list-container h-fit w-[35vw] mr-12">
-                    <List data={sports?.docs[5]} />
-                    <List data={sports?.docs[6]} />
+                  <div className="list-container w-[35vw] mr-12">
+                    <List data={sports?.docs[7]} />
+                    <List data={sports?.docs[8]} />
+                    {/* <List className="" data={sports?.docs[9]} /> */}
                   </div>
                 </div>
                 {/* Latest Section */}
-
-                <div>
-                  <h1 className="sticky text-3xl font-bold bg-beige pb-10 mt-24 font-serif ml-12">
+                <div className="mt-12">
+                  <h1 className="sticky text-3xl font-bold bg-beige pb-10 font-serif ml-12">
                     Latest
                   </h1>
                   <div className="grid grid-rows-1 grid-flow-col gap-4 overflow-scroll mx-12">
@@ -209,7 +210,7 @@ function Feed() {
                   <h1 className="sticky text-3xl font-bold bg-beige pb-10 mt-16 font-serif mx-12">
                     Trending
                   </h1>
-                  <div className="grid grid-cols-5 h-[100vh] gap-8 mx-12">
+                  <div className="grid grid-cols-5 gap-8 mx-12">
                     <div className="col-span-5 md:col-span-3">
                       <img
                         className=" w-full brightness-50 rounded-sm"
@@ -251,31 +252,27 @@ function Feed() {
                     </div>
                     <div className="col-span-5 md:col-span-2 overflow-scroll">
                       <div className="grid grid-cols-1 grid-flow-row overflow-scroll">
-                        {/* <div className="bg-beige">
-                        <h1 className="sticky text-3xl font-bold bg-beige font-serif">
-                          Trending
-                        </h1>
-                      </div> */}
-
                         <div className="container">
                           {isAdActive ? (
                             // className="flex flex-col justify-center items-center"
-                            <div>
+                            <div className="hidden h-[80vh] md:flex md:flex-col md:justify-center md:items-center">
                               <img
                                 src="https://study.com/cimages/multimages/16/burgerad15179945781952220614.png"
                                 alt="advertisement"
                                 className="rounded-sm w-full h-5/6"
                               />
-                              <button
-                                className="mt-6 ml-40 bg-zinc-200 p-3 rounded-lg text-lg shadow-sm text-gray-800 font-semibold hover:text-black hover:text-xl"
-                                onClick={handleAd}
-                              >
-                                <GrClose className="inline mr-1 font-bold" />{" "}
-                                Remove Ads
-                              </button>{" "}
+                              <div className="btn flex flex-col justify-center items-center">
+                                <button
+                                  className="bg-gray-100 hover:bg-darkBeige hover:cursor-pointer mt-6 bg-zinc-200 p-3 rounded-lg text-lg shadow-sm text-gray-800 font-semibold"
+                                  onClick={handleAd}
+                                >
+                                  <GrClose className="inline mr-1 font-bold" />{" "}
+                                  Remove Ads
+                                </button>{" "}
+                              </div>
                             </div>
                           ) : (
-                            <div className="grid grid-rows-1 grid-flow-col md:grid-cols-1 md:grid-flow-row lg:grid-cols-2 gap-6 overflow-scroll mb-20 px-1">
+                            <div className="hidden h-[91vh] md:grid md:grid-cols-1 md:grid-flow-row xl:grid-cols-2 gap-6 mb-20 px-1">
                               {/* {console.log("Trending state : ", trending)} */}
                               {trending.length > 0 ? (
                                 <div>
@@ -372,9 +369,10 @@ function Feed() {
                     </div>
                   </div>
                 </div>
+
                 {/* Entertainment List Section */}
-                <div className="mt-28">
-                  <h1 className="sticky text-3xl font-bold bg-beige pb-8 mt-16 font-serif mx-12">
+                <div className="">
+                  <h1 className="sticky text-3xl font-bold bg-beige pb-8 mt-12 font-serif mx-12">
                     Entertainment
                   </h1>
                   <div className="mx-12">
@@ -383,11 +381,12 @@ function Feed() {
                     <List data={sports?.docs[6]} />
                   </div>
                 </div>
+
                 {/* Sports - Business Section */}
-                <div className="grid grid-cols-2 mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 mt-8 mx-12">
                   {/* Sports */}
                   <div>
-                    <h1 className="sticky text-3xl font-bold w-full bg-beige my-10 font-serif mx-12">
+                    <h1 className="sticky text-3xl font-bold w-full bg-beige my-10 font-serif">
                       Sports{" "}
                       {/* <button>
                         <IoIosArrowDropdownCircle
@@ -399,11 +398,11 @@ function Feed() {
                     <div
                       className={`${
                         isSActive ? " visible " : "hidden"
-                      } grid grid-rows-1 grid-flow-col gap-4 overflow-scroll mx-12 `}
+                      } overflow-scroll `}
                     >
                       {/* {console.log("sports : ", sports)} */}
                       {sports.docs.length > 0 ? (
-                        <div className="grid grid-cols-2 grid-flow-row gap-4">
+                        <div className="grid grid-rows-1 grid-flow-col sm:grid-cols-1 sm:grid-flow-row xl:grid-cols-2 gap-4">
                           {sports.docs.slice(0, 4).map((t) => (
                             <div>
                               {/* {console.log("Trending side-bar from maps : ", t)} */}
@@ -423,7 +422,7 @@ function Feed() {
                           ))}
                         </div>
                       ) : (
-                        <div className="grid grid-cols-2 grid-flow-row gap-4">
+                        <div className="grid grid-rows-1 grid-flow-col sm:grid-cols-1 sm:grid-flow-row xl:grid-cols-2 gap-4">
                           {news.results.slice(0, 4).map((t) => (
                             <div>
                               {console.log("No Data in Sports")}
@@ -450,7 +449,7 @@ function Feed() {
                   </div>
                   {/* Business */}
                   <div>
-                    <h1 className="sticky text-3xl font-bold w-full bg-beige my-10 font-serif mx-12">
+                    <h1 className="sticky text-3xl font-bold w-full bg-beige my-10 font-serif">
                       Business{" "}
                       {/* <button>
                         <IoIosArrowDropdownCircle
@@ -462,11 +461,11 @@ function Feed() {
                     <div
                       className={`${
                         isFActive ? " visible " : "hidden"
-                      } grid grid-rows-1 grid-flow-col gap-4 overflow-scroll mx-12 `}
+                      } overflow-scroll `}
                     >
                       {/* {console.log("finance : ", finance)} */}
                       {finance.docs.length > 0 ? (
-                        <div className="grid grid-cols-2 grid-flow-row gap-4">
+                        <div className="grid grid-rows-1 grid-flow-col sm:grid-cols-1 sm:grid-flow-row xl:grid-cols-2 gap-4">
                           {finance.docs.slice(0, 4).map((t) => (
                             <div>
                               {/* {console.log("Finance from maps : ", t)} */}
@@ -482,7 +481,7 @@ function Feed() {
                           ))}
                         </div>
                       ) : (
-                        <div className="grid grid-cols-2 grid-flow-row gap-4">
+                        <div className="grid grid-rows-1 grid-flow-col sm:grid-cols-1 sm:grid-flow-row xl:grid-cols-2 gap-4">
                           {news.results.slice(0, 4).map((t) => (
                             <div>
                               {console.log("No Data in finance")}
