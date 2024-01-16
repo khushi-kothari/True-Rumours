@@ -38,28 +38,31 @@ function NewsDetail(data) {
                     <>{article.created_date}</>
                   )}
                 </p>
-                <img
-                  className="w-full h-screen"
-                  src={
-                    article.media?.length > 0
-                      ? article.media[0]?.["media-metadata"].length > 0
-                        ? article.media[0]?.["media-metadata"]?.[
-                            article.media[0]?.["media-metadata"].length - 1
-                          ].url
-                        : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                      : article.multimedia?.length > 0
-                      ? article.multimedia[
-                          article.multimedia.length - 1
-                        ].url.startsWith("https")
-                        ? article.multimedia[article.multimedia.length - 1].url
-                        : `https://static01.nyt.com/${
-                            article.multimedia[article.multimedia.length - 1]
+                <div class="flex items-center justify-center">
+                  <img
+                    className="h-[50vh] md:w-full md:h-screen"
+                    src={
+                      article.media?.length > 0
+                        ? article.media[0]?.["media-metadata"].length > 0
+                          ? article.media[0]?.["media-metadata"]?.[
+                              article.media[0]?.["media-metadata"].length - 1
+                            ].url
+                          : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        : article.multimedia?.length > 0
+                        ? article.multimedia[
+                            article.multimedia.length - 1
+                          ].url.startsWith("https")
+                          ? article.multimedia[article.multimedia.length - 1]
                               .url
-                          }`
-                      : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                  alt="image"
-                />
+                          : `https://static01.nyt.com/${
+                              article.multimedia[article.multimedia.length - 1]
+                                .url
+                            }`
+                        : "https://images.unsplash.com/photo-1579532536935-619928decd08?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    }
+                    alt="image"
+                  />
+                </div>
               </div>
               <div class="flex items-center lg:w-4/5 mx-20 mt-96 pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
                 <div class="flex-grow sm:text-left mt-6 sm:mt-0">
@@ -72,8 +75,8 @@ function NewsDetail(data) {
                 </div>
               </div>
             </div>
-            <div className=" flex flex-col justify-center items-center ">
-              <p className="m-44 mt-44 text-justify h-screen overflow-clip">
+            <div className="para-container flex flex-col justify-center items-center ">
+              <p className="m-8 mb-44 md:m-44 mt-0 md:mt-[35vh] xl:mt-[40vh] text-justify h-screen overflow-clip">
                 {article.content}
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                 feugiat luctus ex, sit amet tincidunt purus semper et. Morbi in
